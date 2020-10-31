@@ -1,0 +1,6 @@
+nginx-js-challenge: hardening-no-relro *
+nginx-js-challenge: hardening-no-pie *
+nginx-js-challenge: binary-without-manpage *
+nginx-js-challenge: new-package-should-close-itp-bug
+nginx-js-challenge: description-is-pkg-name *
+nginx-js-challenge: init.d-script-does-not-implement-required-option *

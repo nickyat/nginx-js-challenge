@@ -1,0 +1,5 @@
+# Defaults for nginx-js-challenge initscript
+# sourced by /etc/init.d/nginx-js-challenge
+
+# Additional options that are passed to nginx-js-challenge
+DAEMON_ARGS=""

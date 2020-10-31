@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with systemd
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip
+
+override_dh_auto_install:
+	dh_install nginx-js-challenge usr/sbin
+	dh_install nginx/js_challenge_include.conf /usr/share/doc/nginx-js-challenge/
+	dh_install nginx/js_challenge_main.conf /usr/share/doc/nginx-js-challenge/
+	dh_install nginx/js_challenge_server.conf /usr/share/doc/nginx-js-challenge/
