@@ -3,12 +3,9 @@ package main
 import (
 	"flag"
 	"io"
-	"io/ioutil"
 	"log"
-	"math/rand"
 	"os"
 	"regexp"
-	"time"
 )
 
 // nolint: gochecknoinits
@@ -20,9 +17,6 @@ func init() {
 	flag.BoolVar(&cmdLogDateTime, "log-date-time", true, "add date/time to log output")
 	flag.BoolVar(&cmdDebug, "debug", false, "enable debug logging")
 	flag.Parse()
-
-	// seed random source
-	rand.Seed(time.Now().UTC().UnixNano())
 
 	// define custom log flags
 	var logFlag int
@@ -37,7 +31,7 @@ func init() {
 		debugWriter = os.Stdout
 		logFlag |= log.Lshortfile
 	} else {
-		debugWriter = ioutil.Discard
+		debugWriter = io.Discard
 	}
 
 	// initialize loggers
